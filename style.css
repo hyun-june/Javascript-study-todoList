@@ -1,42 +1,139 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ownglyph_ryuttung-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryuttung-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     margin: 0;
-    background-image: url("images/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.container{
-    background-color: white;
     min-height: 100vh;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.task-area{
-    border: 1px solid lightgrey;
-}
-
-.task-tabs{
     display: flex;
-    border-bottom: 1px solid lightgrey;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
-.task-tabs div{
+.display-header{
+    display: flex;
     padding: 1em;
 }
 
-#under-line{
-    height: 4px;
-    background-color: pink;
-    position: absolute;
-    width: 70px;
-    left: 0px;
-    top: 52px;
-    padding: 0px;
+.display-header h1{
+    margin-left: 1em;
+    font-family: 'Ownglyph_ryuttung-Rg';
 }
 
-.task{
+.display-box{
+    width: 30rem;
+    height: 40rem;
+    border: 2px solid #cbb1d4;
+    position: absolute;
+    top: 10%;
+}
+
+#display-underline{
+    position: absolute;
+    width: 0px;
+    height: 4px;
+    background-color: #fee1e8;
+    top: 0px;
+    padding: 0px;
+    transition: 0.3s;
+}
+
+.display-tabs{
+    display: flex;
+    border-bottom: 1px solid #cbb1d4;
+    cursor: pointer;
+}
+
+.display-tabs div{
+    padding: 1em;
+}
+
+.display-task{
     display: flex;
     justify-content: space-between;
-    padding: 1em;
+    border-bottom: 1px dashed #cbb1d4;
+    align-items: center;
+    width: 100%;
+}
+
+.display-task-content{
+    display: flex;
+    font-family: 'Pretendard-Regular';
+}
+
+.display-task-content div:first-child{
+    padding: 0px 1em;
+}
+
+#add-button{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    bottom: 0;
+    border: 1px solid #d6bbff;
+    right: 0;
+    margin: 10px;
+    border-radius: 30%;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 0px;
+    color: #d6bbff;
+    transition: 0.5s;
+}
+
+#add-button:hover{
+    background-color: #d6bbff;
+    color:white;
+}
+
+.display-button-zone{
+    display: flex;
+}
+
+.display-button{
+    border: none;
+    background-color: white;
+    transition: 0.5s;
+    width: 50px;
+    font-size: 20px;
+}
+
+.display-button:first-child:hover{
+    background-color: #d0fc5c;
+}
+
+.display-button:nth-child(2):hover{
+    background-color: #db4455;
+}
+
+.task-line{
+    text-decoration: line-through;
+    background-color: lightgray;
+}
+
+@media screen and (max-width: 430px) {
+    .display-box {
+        width: 100%;
+        height: 100%;
+        top: 0;
+    }
+}
+
+@media screen and (min-width: 431px) and (max-width: 1024px) {
+    .display-box {
+        min-width: 100%;
+        height: 100%;
+        top: 0;
+    }
 }
